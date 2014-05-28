@@ -1,0 +1,15 @@
+<h1>Home#index</h1>
+<p>Find me in app/views/home/index.html.erb</p>
+<% @images.each do |image_record| %>
+	  <%= image_tag( image_record.image.url) %>
+	  <form action="/home/index" method="post">
+<%= radio_button_tag(:rating, "1") %>
+<%= label_tag(:rating_1, "1") %>
+<%= radio_button_tag(:rating, "2") %>
+<%= label_tag(:rating_2, "2") %>
+<input type="submit" value="Submit">
+</form>
+	  <style>
+img { width: 20%; }
+</style>
+	<% end %>
